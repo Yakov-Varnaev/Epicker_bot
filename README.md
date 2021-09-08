@@ -1,2 +1,2 @@
 # Epicker_bot
-This is a bot for my 
+This is a bot for me
