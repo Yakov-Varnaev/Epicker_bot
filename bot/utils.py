@@ -8,6 +8,7 @@ from config import ADMINS, WEBHOOK_URL
 async def on_startup_notify(dp: Dispatcher):
     for admin in ADMINS:
         try:
+            await dp.bot.set_webhook(WEBHOOK_URL)
             await dp.bot.send_message(
                 admin,
                 'Hello, Creators!\nI was successfully launched!'
@@ -17,8 +18,7 @@ async def on_startup_notify(dp: Dispatcher):
             logging.exception(err)
 
 
-async def set_default_commands(dp, bot):
-    await bot.set_webhook(WEBHOOK_URL)
+async def set_default_commands(dp):
     await dp.bot.set_my_commands(
         [
             types.BotCommand("start", "start"),

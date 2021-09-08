@@ -17,7 +17,7 @@ bot = Bot(token=BOT_TOKEN, loop=asyncio.get_event_loop())
 dp = Dispatcher(bot)
 
 async def on_startup(dp):
-    await on_startup_notify(dp, bot)
+    await on_startup_notify(dp)
 
 
 @dp.message_handler(commands=['start'])
