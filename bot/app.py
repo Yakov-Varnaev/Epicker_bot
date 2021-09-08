@@ -12,7 +12,8 @@ BOT_TOKEN = config.BOT_TOKEN
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=BOT_TOKEN, loop=asyncio.get_event_loop())
+loop = asyncio.get_event_loop()
+bot = Bot(token=BOT_TOKEN, loop=loop)
 
 dp = Dispatcher(bot)
 
