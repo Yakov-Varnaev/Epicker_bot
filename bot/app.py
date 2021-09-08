@@ -1,4 +1,5 @@
 import logging
+import asyncio
 
 from aiogram import Bot, Dispatcher, types, executor
 
@@ -11,7 +12,7 @@ BOT_TOKEN = config.BOT_TOKEN
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=BOT_TOKEN,)
+bot = Bot(token=BOT_TOKEN, loop=asyncio.get_event_loop())
 
 dp = Dispatcher(bot)
 
