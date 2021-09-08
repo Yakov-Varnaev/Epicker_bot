@@ -16,7 +16,7 @@ bot = Bot(token=BOT_TOKEN, loop=asyncio.get_event_loop())
 
 dp = Dispatcher(bot)
 
-async def on_startup():
+async def on_startup(dp):
     await on_startup_notify(dp, bot)
 
 
@@ -73,9 +73,4 @@ if __name__ == '__main__':
         on_startup=on_startup,
         host=config.WEBAPP_HOST,
         port=config.WEBAPP_PORT,
-    )
-
-    executor.start_polling(
-        dispatcher=dp,
-        skip_updates=True,
     )
