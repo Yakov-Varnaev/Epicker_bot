@@ -24,3 +24,7 @@ async def set_default_commands(dp):
             types.BotCommand("help", "help"),
         ]
     )
+
+
+async def is_in_private_chat(message: types.Message):
+    return message.from_user.id == message.chat.id
