@@ -73,3 +73,8 @@ if __name__ == '__main__':
         host=config.WEBAPP_HOST,
         port=config.WEBAPP_PORT,
     )
+
+    executor.start_polling(
+        dispatcher=dp,
+        skip_updates=True,
+    )
