@@ -1,6 +1,6 @@
 import logging
 
-from aiogram import Bot, Dispatcher, types
+from aiogram import Bot, Dispatcher, types, executor
 from aiogram.utils.executor import start_webhook
 
 import config
@@ -66,7 +66,16 @@ async def handler(message: types.Message):
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
-    start_webhook(
+    # start_webhook(
+    #     dispatcher=dp,
+    #     webhook_path=config.WEBHOOK_PATH,
+    #     skip_updates=True,
+    #     on_startup=on_startup,
+    #     host=config.WEBAPP_HOST,
+    #     port=config.WEBAPP_PORT,
+    # )
+
+    executor.start_polling(
         dispatcher=dp,
         webhook_path=config.WEBHOOK_PATH,
         skip_updates=True,
