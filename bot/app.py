@@ -15,8 +15,8 @@ bot = Bot(token=BOT_TOKEN,)
 
 dp = Dispatcher(bot)
 
-async def on_startup(dp):
-    await on_startup_notify(dp)
+async def on_startup():
+    await on_startup_notify(dp, bot)
 
 
 @dp.message_handler(commands=['start'])
