@@ -47,7 +47,7 @@ async def send_help_message(message: types.Message):
             message.from_user.id,
             text=(
             'I do not know much about my developer. :(\n'
-            'The only thing o know, that this is his github: https://github.com/Yakov-Varnaev'
+            'The only thing i know is his github: https://github.com/Yakov-Varnaev'
             ),
             reply_markup=mainMenu
         )
